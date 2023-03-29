@@ -31,6 +31,7 @@ function calcularINSS()
 function calcularIRRF($salarioSemInss, $aliq)
 {
   $dependentes = $_GET['dependentes'];
+  $hrnoturno = $_GET['hrnoturno'];
   $irrf = 0;
   $valorLiquido = 0;
 
@@ -55,8 +56,14 @@ function calcularIRRF($salarioSemInss, $aliq)
   }
 
   $valorLiquido = $salarioSemInss - $irrf;
+  $salNoturno = $valorLiquido + ($hrnoturno * 10.7); 
+  $totalNoturno = $hrnoturno * 10.7;
 
   return "<br> O valor de IRRF é: " . round($irrf, 2) .
   "<br> O valor de INSS é: " . round($aliq, 2) . 
-  "<br> O seu salario liquido é: " . round($valorLiquido, 2) ;
+  "<br> O seu salario liquido é: " . round($valorLiquido, 2) . 
+  "<hr> O calculo do adicional noturno é: " . round($totalNoturno, 2) . 
+  "<br> O seu salario liquido com acressimo do adicional noturno é: " . round($salNoturno, 2) ;
 }
+
+

@@ -38,6 +38,15 @@
                     <input type="text" class="form-control-sm inp" id="dependentes" name="dependentes"
                     placeholder="N de dependentes">
                 </div>
+                 <!-- Adicional noturno -->
+                <label for="hrnoturno" class="form-label">Adicional noturno</label>
+                <div class="mb-3 input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text inp" id="inputGroup-sizing-lg"><i class="bi bi-moon-stars d-flex align-items-center"></i></span>
+                    </div> 
+                    <input type="text" class="form-control-sm inp" id="hrnoturno" name="hrnoturno"
+                    placeholder="Horas noturnas">
+                </div>
                 <!-- Botoes submit e reset -->
                 <div>
                     <button type="submit">
@@ -52,7 +61,7 @@
         </form>
         <?php
             include "caio-calculosalario.php";
-            if (isset($_GET["salario"]) && isset($_GET["dependentes"]) && isset($_GET["nome"])) {
+            if (isset($_GET["salario"]) && isset($_GET["dependentes"]) && isset($_GET["nome"]) && isset($_GET["hrnoturno"])) {
                 $nome = $_GET['nome'];
                 
                 echo 'Ola, ' . $nome;
